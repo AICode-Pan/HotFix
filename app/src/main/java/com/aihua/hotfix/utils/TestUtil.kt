@@ -1,4 +1,4 @@
-package com.aihua.hotfix
+package com.aihua.hotfix.utils
 
 class TestUtil {
     companion object {

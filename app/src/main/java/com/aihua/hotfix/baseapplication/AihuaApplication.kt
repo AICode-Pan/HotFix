@@ -1,9 +1,10 @@
-package com.aihua.hotfix
+package com.aihua.hotfix.baseapplication
 
 import android.app.Application
 import android.content.Context
 import android.os.Environment
 import android.util.Log
+import com.aihua.hotfix.utils.HotFix
 import java.io.File
 
 class AihuaApplication : Application() {
@@ -21,7 +22,10 @@ class AihuaApplication : Application() {
         Log.i("AihuaApplication", "dexPath=$dexPath")
         var dexFile = File(dexPath.toString())
         if (dexFile.exists()) {
+            Log.i("AihuaApplication", "dexFile is exists!")
             HotFix.toFix(this, dexFile)
+        } else {
+            Log.i("AihuaApplication", "dexFile is not exists!")
         }
     }
 }
